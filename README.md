@@ -12,8 +12,8 @@ A Simple Script That Admin Can Be Able To Carry All Vehicles
 
 ## Command Usages
 
-- /carryvehicle --To carry nearest vehicle
-- /dropvehicle -- To drop carried vehicle
+- /carryvehicle (To carry nearest vehicle in radius 5 meter)
+- /dropvehicle (To drop carried vehicle)
 
 ## Discord
 
