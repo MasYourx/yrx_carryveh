@@ -17,4 +17,4 @@ A Simple Script That Admin Can Be Able To Carry All Vehicles
 
 ## Discord
 
-Discord: https://discord.illenium.dev
+[⚡MasYourx Projects](https://discord.gg/Eba3vRJ4d7)
