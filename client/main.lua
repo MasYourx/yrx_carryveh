@@ -73,30 +73,32 @@ function DropVehicle()
     end
 end
 
-RegisterCommand('carryvehicle', function(source)
-    local xPlayer = ESX.GetPlayerFromId(source)
-    if xPlayer and xPlayer.getGroup() == 'admin' then
-        CarryVehicle()
-    else
-        lib.notify({
-            title = 'Carry Vehicle',
-            description = 'Access Denied!',
-            type = 'error'
-        })
-    end
+RegisterCommand('carryvehicle', function()
+    ESX.TriggerServerCallback('checkAdminPermission', function(hasPermission)
+        if hasPermission then
+            CarryVehicle()
+        else
+            lib.notify({
+                title = 'Carry Vehicle',
+                description = 'Access Denied!',
+                type = 'error'
+            })
+        end
+    end)
 end, false)
 
-RegisterCommand('dropvehicle', function(source)
-    local xPlayer = ESX.GetPlayerFromId(source)
-    if xPlayer and xPlayer.getGroup() == 'admin' then
-        DropVehicle()
-    else
-        lib.notify({
-            title = 'Carry Vehicle',
-            description = 'Access Denied!',
-            type = 'error'
-        })
-    end
+RegisterCommand('dropvehicle', function()
+    ESX.TriggerServerCallback('checkAdminPermission', function(hasPermission)
+        if hasPermission then
+            DropVehicle()
+        else
+            lib.notify({
+                title = 'Carry Vehicle',
+                description = 'Access Denied!',
+                type = 'error'
+            })
+        end
+    end)
 end, false)
 
 AddEventHandler('onResourceStart', function(resourceName)
